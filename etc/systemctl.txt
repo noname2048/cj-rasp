@@ -4,7 +4,7 @@ Description=DHT22 Service
 After=network-online.target
 
 [Service]
-WorkingDirectory=/home/rasp
+WorkingDirectory=/home/rasp/Desktop/cj-rasp/src/
 User=rasp
 Type=idle
 Environment="PYTHONPATH=$PYTHONPATH:/home/rasp/.local/lib/python3"
