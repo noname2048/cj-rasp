@@ -1,0 +1,2 @@
+# crontab -e
+* * * * * /usr/bin/python /home/rasp/Desktop/project/sub.py >> /home/rasp/Desktop/project/sub.log 2>&1

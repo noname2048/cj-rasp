@@ -1,0 +1,14 @@
+# /lib/systemd/system/dht22.service
+[Unit]
+Description=DHT22 Service
+After=network-online.target
+
+[Service]
+WorkingDirectory=/home/rasp
+User=rasp
+Type=idle
+Environment="PYTHONPATH=$PYTHONPATH:/home/rasp/.local/lib/python3"
+ExecStart=/usr/bin/python /home/rasp/Desktop/cj-rasp/src/main.py > /home/rasp/Desktop/cj-rasp/main.log 2>&1
+
+[Install]
+WantedBy=multi-user.target
