@@ -1,4 +1,12 @@
 # /lib/systemd/system/dht22.service
+# /etc/systemd/system/dht22.service
+# 등록
+# sudo systemctl start dht22
+# 자동시작
+# sudo systemctl deamon-reload
+# sudo systemctl restart dht22
+# sudo systemctl enable dht22
+
 [Unit]
 Description=DHT22 Service
 After=network-online.target
@@ -9,6 +17,8 @@ User=rasp
 Type=idle
 Environment="PYTHONPATH=$PYTHONPATH:/home/rasp/.local/lib/python3"
 ExecStart=/usr/bin/python /home/rasp/Desktop/cj-rasp/src/main.py > /home/rasp/Desktop/cj-rasp/main.log 2>&1
+Restart=on-failure
+RestartSect=60s
 
 [Install]
 WantedBy=multi-user.target
